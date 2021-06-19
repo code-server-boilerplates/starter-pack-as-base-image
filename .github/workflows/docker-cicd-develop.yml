@@ -35,9 +35,9 @@ jobs:
 
        - name: Build and check for wasted space
          run: |
-            docker build --tag registry.repohub.dev/${{env.namespace}}/${{env.repository}}
+            docker build --tag registry.repohub.dev/${{env.namespace}}/${{env.repository}} .
             # may not work if it's first test build
-            dive registry.repohub.dev/${{env.namespace}}/${{env.repository}} --source ghcr.io/${{env.namespace}}/${{env.repository}}
+            dive registry.repohub.dev/${{env.namespace}}/${{env.repository}} #--source ghcr.io/${{env.namespace}}/${{env.repository}}
 
   publish-to-dev:
      name: Publish as canary
