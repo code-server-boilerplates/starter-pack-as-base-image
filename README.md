@@ -13,10 +13,10 @@ this Docker image is for basic Kubernetes cluster management and for deploying K
 ## Checklist for new template maintainers
 
 _If you want to customize the base image, either [go to this repo](https://github.com/code-server-boilerplates/starter-pack) and follow
-the new template maintainer's checklist or change the base image into [any available Docker images here][base-images-list]_
+the new template maintainer's checklist or change the base image into [any available Docker images here][base-images-list]._
 
 <!-- these links will work soon -->
-[base-images-list]: https://csb-maintainer-docs.community-lores.gq/starter-pack/making-templates-using-base-images/picking-different-image
+[base-images-list]: https://csb-docs.community-lores.gq/starter-pack/making-templates-using-base-images#picking-different-image
 
 * [X] Duplicate this repo or [generate as new repo](https://github.com/code-server-boilerplates/starter-pack-as-base-image) to get started.
 Don't forget to complete [the post-repo creation/generation checklist](https://cdrs-docs.rtapp.tk/checklists-prc) to setup GH Actions, Docker Hub/RHQCR/GHCR logins and Mergify.
@@ -28,7 +28,7 @@ Don't forget to complete [the post-repo creation/generation checklist](https://c
 
 ## Deploy
 
-Deployment docs are avaiable at [the Deployment Guides section](/docs/deployment-guides).
+Deployment docs are avaiable at [this document](/DEPLOY.md), including Deploy to Railway/Okteto Cloud badges and stuff.
 
 ## License and Contributing
 
