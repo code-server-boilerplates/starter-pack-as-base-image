@@ -1,7 +1,7 @@
-# Boilerplate for Helm Charts development + using Okteto CLI
+# Boilerplate for developing and managing Cloud-Native applications
 
 This deploy-code-server template uses the `starter-pack` GHCR image as its base image in this real-life example. For those of you who want to just use this repo,
-this Docker image is for basic Kubernetes cluster management and for deploying Kubernetes stuff with Okteto CLI.
+this Docker image is for development, deployment and management/adminstration of cloud-native applications, deployed at cloud platforms like Google Kubernetes Platform and on-permises, in either plain Docker + Kubernetes method or with help of the Hashi stack (HashiCorp Terraform, Vault, Consul, etc.) or other tools like Okteto Cloud/Enterprise.
 
 ## Tools Included
 
@@ -9,6 +9,8 @@ this Docker image is for basic Kubernetes cluster management and for deploying K
   * Okteto CLI, for Okteto Cloud and Enterprise users
   * Helm, the package manager for Kubernetes
   * kubectl to remotely manage Kubernete clusters
+  * Tools that part of the Hashi stack, including Terraform, Vault and Consul - SOON
+  * Google Cloud CLI, through `python3` build stage - SOON
 
 ## Checklist for new template maintainers
 
