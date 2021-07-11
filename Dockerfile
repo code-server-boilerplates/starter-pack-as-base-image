@@ -12,11 +12,22 @@ LABEL org.opencontainers.image.source="https://github.com/code-server-boilerplat
 # @namespace/template-slug
 ENV TEMPLATE_SLUG_PREFIX="@code-server-boilerplates/kubernetes-starter"
 
-# Install Kubernetes stuff, currently WIP #
+### Add repositories here, so we can just do install and then clean up ###
+RUN curl https://baltocdn.com/helm/signing.asc | sudo apt-key add - \
+    && echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list \
+    curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - \
+    sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+
 # Step 1: Okteto CLI
 RUN curl https://get.okteto.com -sSfL | sh
 
 # Step 2: Helm
-RUN curl https://baltocdn.com/helm/signing.asc | sudo apt-key add - \
-    && echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list \
-    && sudo apt-get update && sudo apt-get install helm --yes
+# Want to use Waypoint instead? See the difference at https://www.waypointproject.io/docs/intro/vs/helm.
+RUN sudo apt-get install helm --yes
+
+# Step 3: Hashi stack
+# - Infra: Terraform, Packer, Vagrant
+# - Security: vault, Boundary
+# - Networking: Consul
+# - Applications: Nomad, 
+RUN sudo apt-get install terraform packer vagrant vault boundary nomad waypoint --yes
