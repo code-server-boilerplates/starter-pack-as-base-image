@@ -16,7 +16,7 @@ ENV TEMPLATE_SLUG_PREFIX="@code-server-boilerplates/kubernetes-starter"
 RUN curl https://baltocdn.com/helm/signing.asc | sudo apt-key add - \
     && echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list \
     && curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - \
-    && sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+    && echo "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
 
 # Step 1: Okteto CLI
 RUN curl https://get.okteto.com -sSfL | sh
