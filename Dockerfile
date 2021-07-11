@@ -15,8 +15,8 @@ ENV TEMPLATE_SLUG_PREFIX="@code-server-boilerplates/kubernetes-starter"
 ### Add repositories here, so we can just do install and then clean up ###
 RUN curl https://baltocdn.com/helm/signing.asc | sudo apt-key add - \
     && echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list \
-    curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - \
-    sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+    && curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - \
+    && sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 
 # Step 1: Okteto CLI
 RUN curl https://get.okteto.com -sSfL | sh
@@ -29,5 +29,5 @@ RUN sudo apt-get install helm --yes
 # - Infra: Terraform, Packer, Vagrant
 # - Security: vault, Boundary
 # - Networking: Consul
-# - Applications: Nomad, 
+# - Applications: Nomad, Waypoint
 RUN sudo apt-get install terraform packer vagrant vault boundary nomad waypoint --yes
