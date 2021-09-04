@@ -29,7 +29,7 @@ Then to start:
 docker run -e GIT_USER_EMAIL=$(git config --global user.email) -e GIT_USER_NAME=$(git config --global user.name) \
     -e GITHUB_TOKEN=ghp_yourTokenHereIfGHcliIsNotHere -e GITHUB_LOGIN=username \
     -e GIT_REPO=https://github.com/benawad/dogehouse -e GENERATE_PASSWORD=true
-    
+
     ghcr.io/code-server-boilerplates/kubernetes-starter
 ```
 
@@ -45,4 +45,4 @@ If you hate this, you can use the Docker Compose path by doing these:
 
 Once you pressed the badge and redirected to Railway, the following variables you need to fill up are:
 
-* 
+*
